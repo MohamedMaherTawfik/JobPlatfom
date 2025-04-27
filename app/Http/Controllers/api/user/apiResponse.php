@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\api\auth;
+namespace App\Http\Controllers\api\user;
 
 
 trait apiResponse
@@ -19,7 +19,7 @@ trait apiResponse
 
     public function sendError($error)
     {
-        $code = 401;
+        $code = 404;
     	$response = [
             'success' => false,
             'message' => $error,

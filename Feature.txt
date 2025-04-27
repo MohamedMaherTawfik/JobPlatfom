@@ -1,0 +1,14 @@
+2. Social Media Micro API (Mini Twitter)
+Features:
+
+Users can post, comment, like.
+
+Followers/following system.
+
+Feed algorithm (recent or trending).
+
+Notifications system.
+
+Media uploads (images/videos).
+
+Real-time support with websockets (optional).

@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers\auth;
 
+use App\Http\Controllers\api\auth\apiResponse;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\addressRequest;
 use App\Http\Requests\userRequest;
-use App\Mail\RegisterMail;
 use App\Models\User;
-use App\Models\UserAddress;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
