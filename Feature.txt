@@ -1,4 +1,4 @@
-2. Social Media Micro API (Mini Twitter)
+Social Media Micro API (Mini Twitter)
 Features:
 
 Users can post, comment, like.

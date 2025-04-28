@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class post extends Model
+class comments extends Model
 {
-    protected $table = 'posts';
+    protected $table = 'comments';
     protected $guarded = [];
 
     public function user()
@@ -14,8 +14,8 @@ class post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function comments()
+    public function post()
     {
-        return $this->hasMany(Comments::class);
+        return $this->belongsTo(post::class);
     }
 }

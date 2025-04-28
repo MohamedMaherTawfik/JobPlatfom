@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\user\commentController;
 use App\Http\Controllers\api\user\postController;
 use App\Http\Controllers\auth\AuthController;
 use Illuminate\Support\Facades\Route;
@@ -15,13 +16,22 @@ Route::group([
 
 });
 
-
 Route::group([
     'prefix' => 'post'
 ],function (){
     Route::get('/',[postController::class,'index']);
     Route::get('/{id}',[postController::class,'show']);
     Route::post('/',[postController::class,'store'])->middleware('jwt.auth');
-    Route::put('/{id}',[postController::class,'update'])->middleware('jwt.auth');
+    Route::post('/{id}',[postController::class,'update'])->middleware('jwt.auth');
     Route::delete('/',[postController::class,'destroy'])->middleware('jwt.auth');
 });
+
+Route::group([
+],function (){
+    Route::get('/comments',[commentController::class,'index']);
+    Route::get('/comment/{id}',[commentController::class,'show']);
+    Route::post('/comments/{post_id}',[commentController::class,'store'])->middleware('jwt.auth');
+    Route::post('/comment/{id}',[commentController::class,'update'])->middleware('jwt.auth');
+    Route::delete('/comments/{id}',[commentController::class,'destroy'])->middleware('jwt.auth');
+});
+
